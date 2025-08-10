@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Creative Ads — Performance Marketing Agency</title>
+  <meta name="description" content="Creative Ads — Facebook & Google Ads for e‑commerce. ROAS: 6.8x | 80+ clients | 10+ years" />
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #070707;
+      --card: #0f0f13;
+      --muted: #bfc3d3;
+      --accent1: #7c3aed; /* purple */
+      --accent2: #a78bfa; /* light purple */
+      --glass: rgba(255,255,255,0.04);
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#050506 0%, #09090b 60%);font-family:Inter,system-ui,Arial;color:#fff}
+    a{color:inherit}
+
+    /* NAV */
+    .nav{position:fixed;left:0;right:0;top:14px;display:flex;justify-content:center;z-index:60}
+    .nav-inner{width:95%;max-width:1100px;background:linear-gradient(90deg,rgba(124,58,237,0.14),rgba(167,139,250,0.06));backdrop-filter: blur(6px);padding:12px 18px;border-radius:12px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{height:44px;width:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800}
+    .brand h1{margin:0;font-size:1.05rem}
+    nav a{margin:0 10px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav a.cta{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:8px 14px;border-radius:10px;color:#fff}
+
+    /* HERO */
+    .hero{min-height:78vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 40px}
+    .hero-inner{width:95%;max-width:1200px;display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:36px;border-radius:18px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+    .headline{font-size:2.1rem;line-height:1.02;margin:0 0 12px;color:var(--accent2)}
+    .lead{color:var(--muted);margin:0 0 18px}
+    .hero-cta{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* STATS */
+    .stats{display:flex;gap:12px;margin-top:18px}
+    .stat{flex:1;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:12px;border-radius:12px;text-align:center}
+    .stat .num{font-size:1.25rem;font-weight:800;color:var(--accent2)}
+    .stat .label{color:var(--muted);font-size:0.85rem;margin-top:6px}
+
+    /* RIGHT PANEL */
+    .panel{background:linear-gradient(180deg,#0b0b0d 0%, #0d0d0f 100%);border-radius:14px;padding:18px}
+    .panel h4{margin:0 0 8px;color:var(--accent2)}
+    .panel p{color:var(--muted);margin:0 0 12px}
+    .panel .mini{display:flex;gap:8px;align-items:center}
+    .avatar{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    /* SECTIONS */
+    section{padding:56px 20px}
+    .container{max-width:1100px;margin:0 auto}
+
+    /* Services */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);padding:22px;border-radius:14px;transition:transform .28s ease, box-shadow .28s ease}
+    .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+    .card h3{margin:0 0 8px;color:var(--accent2)}
+
+    /* Testimonials slider */
+    .slider{position:relative}
+    .slides{display:flex;gap:14px;overflow:hidden}
+    .slide{min-width:320px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center}
+
+    /* CONTACT */
+    .contact-card{background:linear-gradient(90deg,rgba(124,58,237,0.06),rgba(167,139,250,0.03));padding:22px;border-radius:12px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:8px;color:#fff}
+
+    footer{padding:26px 20px;text-align:center;color:var(--muted)}
+
+    /* Responsive */
+    @media(max-width:980px){
+      .hero-inner{grid-template-columns:1fr}
+      .about-grid{grid-template-columns:1fr}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:640px){
+      .nav{top:8px}
+      .hero{padding-top:100px}
+      .services-grid{grid-template-columns:1fr}
+      .stats{flex-direction:column}
+      .form-row{grid-template-columns:1fr}
+      .slides{overflow-x:auto;scroll-snap-type:x mandatory}
+      .slide{min-width:86%;scroll-snap-align:center}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo">CA</div>
+        <div>
+          <h1 style="margin:0">Creative Ads</h1>
+          <div style="font-size:12px;color:var(--muted)">Performance Marketing</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Book a Consultation</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap">
+          <div style="flex:1">
+            <h2 class="headline">We help eCommerce stores scale with powerful Facebook & Google Ads</h2>
+            <p class="lead">Data-driven creatives, smart funnels, and conversion-first optimisation to maximise ROAS and scale profitably.</p>
+
+            <div class="hero-cta">
+              <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Free Call</button>
+              <button class="btn btn-ghost" onclick="window.location='#services'">See Services</button>
+            </div>
+
+            <div class="stats" aria-hidden="true">
+              <div class="stat"><div class="num" data-target="6.8">0x</div><div class="label">Average ROAS</div></div>
+              <div class="stat"><div class="num" data-target="80">0</div><div class="label">E‑commerce Clients</div></div>
+              <div class="stat"><div class="num" data-target="10">0</div><div class="label">Years Experience</div></div>
+              <div class="stat"><div class="num" data-target="55">0%</div><div class="label">Conversions Increase</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h4>Proven Results</h4>
+        <p class="muted">We focus on profitable scaling: CRO, creative testing, and full funnel optimisation.</p>
+
+        <div style="margin-top:12px" class="mini">
+          <div class="avatar">C</div>
+          <div>
+            <div style="font-weight:700">Creative Ads</div>
+            <div style="font-size:13px;color:var(--muted)">Book a free 30-min audit</div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7a5c7f6bf0b4d4e8b2f6f3f2a8d5e1a8" alt="team" style="width:100%;border-radius:10px;margin-top:10px;display:block;object-fit:cover;max-height:220px">
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <h2 class="center">Services</h2>
+      <p class="center muted">Full-service performance marketing for e‑commerce brands.</p>
+
+      <div class="services-grid" style="margin-top:20px">
+        <div class="card">
+          <h3>Facebook Ads</h3>
+          <p class="muted">Creative-first campaigns, audience laddering, and scaling playbooks that convert browsers into buyers.</p>
+          <p style="margin-top:12px"><a href="facebook-ads.html" style="color:var(--accent2);font-weight:700">Learn more →</a></p>
+        </div>
+
+        <div class="card">
+          <h3>Google Ads</h3>
+          <p class="muted">Search, Shopping & Display strategies focused on acquisition and ROAS optimisation.</p>
+          <p style="margin-top:12px"><a href="google-ads.html" style="color:var(--accent2);font-weight:700">Learn more →</a></p>
+        </div>
+
+        <div class="card">
+          <h3>Strategy & Funnels</h3>
+          <p class="muted">Full-funnel audits, CRO, and custom strategy roadmaps to scale sustainably.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" style="background:linear-gradient(180deg,rgba(124,58,237,0.04),transparent)">
+    <div class="container">
+      <h2 class="center">What Clients Say</h2>
+      <div class="slider" style="margin-top:18px">
+        <div class="slides" id="slides">
+          <div class="slide">
+            <p>“Creative Ads increased our ROAS from 1.4x to 6.8x — the best agency we've worked with.”</p>
+            <p style="font-weight:700;margin-top:10px">— Alex P., CEO</p>
+          </div>
+          <div class="slide">
+            <p>“Their funnel optimisations doubled our conversion rate within two months.”</p>
+            <p style="font-weight:700;margin-top:10px">— Maria T., Head of Growth</p>
+          </div>
+          <div class="slide">
+            <p>“Proactive, strategic, and creative — helped scale our store to 7 figures.”</p>
+            <p style="font-weight:700;margin-top:10px">— Daniel R., Founder</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about-grid">
+      <div>
+        <h2>About Creative Ads</h2>
+        <p class="muted">We are a performance marketing agency with a single focus — profit. For over a decade we've helped e‑commerce brands scale using a mix of creative testing, advanced audience strategies, and funnel optimisation.</p>
+
+        <ul style="color:var(--muted);margin-top:12px">
+          <li>Hands-on account management</li>
+          <li>Creative production support</li>
+          <li>Data-driven scaling frameworks</li>
+        </ul>
+      </div>
+
+      <div>
+        <div style="background:var(--card);padding:18px;border-radius:12px">
+          <h3 style="color:var(--accent2)">Our approach</h3>
+          <p class="muted">Audit → Test → Scale. We start with a full audit, run high-velocity creative & audience tests, then scale winning combos while protecting margins.</p>
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <div style="flex:1;background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:12px;border-radius:8px;text-align:center">Audit</div>
+            <div style="flex:1;background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;text-align:center">Test</div>
+            <div style="flex:1;background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;text-align:center">Scale</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-bottom:90px">
+    <div class="container">
+      <h2 class="center">Book a Free Consultation</h2>
+      <p class="center muted">No salesy calls — just a clear plan to improve your ad performance.</p>
+
+      <div style="max-width:920px;margin:18px auto;display:grid;grid-template-columns:1fr 420px;gap:18px">
+        <form class="contact-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div style="display:flex;gap:10px;margin-bottom:10px">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="_replyto" placeholder="Email" required>
+          </div>
+          <input type="text" name="company" placeholder="Company (optional)">
+          <textarea name="message" rows="6" placeholder="Tell us about your goals" required></textarea>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+            <button class="btn btn-primary">Request call</button>
+            <div class="muted" style="font-size:13px">We reply within 48 hours</div>
+          </div>
+        </form>
+
+        <aside style="background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:22px;border-radius:12px">
+          <h4 style="color:var(--accent2);margin-top:0">Quick audit checklist</h4>
+          <ul style="color:var(--muted)">
+            <li>ROAS & revenue tracking in place</li>
+            <li>Creative test plan</li>
+            <li>Funnel conversion tracking</li>
+          </ul>
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.0.3&s=4a6d1f4c8f8c6c3e2b1b" alt="audit" style="width:100%;border-radius:10px;margin-top:12px;object-fit:cover">
+        </aside>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2025 Creative Ads • Built for e‑commerce growth
+    </div>
+  </footer>
+
+  <script>
+    // Simple counter animation
+    document.addEventListener('DOMContentLoaded',()=>{
+      const counters = document.querySelectorAll('.num');
+      counters.forEach(c=>{
+        const target = parseFloat(c.dataset.target);
+        const isPercent = String(c.textContent || '').includes('%') || c.dataset.target.includes('%');
+        let start=0;
+        const step = target/120; // ~2s
+        const fmt = (v)=>{
+          if(c.dataset.target.includes('.') || String(target).includes('.')) return (Math.round(v*10)/10).toFixed(1)+ (c.dataset.target=="6.8"? 'x':'');
+          return Math.round(v);
+        }
+        const tick = ()=>{
+          start+=step;
+          if(start<target){
+            c.textContent = fmt(start) + (c.dataset.target=="55"? '%':'')
+            requestAnimationFrame(tick)
+          } else {
+            c.textContent = target + (c.dataset.target=="6.8"? 'x': (c.dataset.target=="55"? '%':''))
+          }
+        }
+        tick();
+      })
+
+      // Simple slider auto-scroll
+      const slides = document.getElementById('slides');
+      if(slides){
+        let idx=0;
+        setInterval(()=>{
+          const width = slides.children[0].getBoundingClientRect().width + 14;
+          idx = (idx+1) % slides.children.length;
+          slides.scrollTo({left: idx*width, behavior:'smooth'});
+        },3500)
+      }
+    })
+  </script>
+</body>
+</html>
